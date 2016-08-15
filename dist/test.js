@@ -7,4 +7,4 @@ var identity = function identity(a) {
   return a;
 };
 
-exports.a = a;
+exports.identity = identity;
