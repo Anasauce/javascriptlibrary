@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sydroth/javascriptlibrary/issues"
   },
-  "homepage": "https://github.com/sydroth/javascriptlibrary#readme"
+  "homepage": "https://github.com/sydroth/javascriptlibrary#readme",
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  }
 }
