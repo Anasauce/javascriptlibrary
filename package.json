@@ -4,7 +4,8 @@
   "description": "_Create a library of commonly used JavaScript/Lodash methods with Documentation and commenting using ES2015. Context",
   "main": "index.js",
   "scripts": {
-    "test": "babel-watch spec/run.js"
+    "test": "babel-watch spec/run.js",
+    "build": "babel -w src --out-dir dist --copy-file"
   },
   "repository": {
     "type": "git",
