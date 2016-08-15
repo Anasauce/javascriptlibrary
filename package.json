@@ -1,0 +1,19 @@
+{
+  "name": "javascriptlibrary",
+  "version": "1.0.0",
+  "description": "_Create a library of commonly used JavaScript/Lodash methods with Documentation and commenting using ES2015. Context",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sydroth/javascriptlibrary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sydroth/javascriptlibrary/issues"
+  },
+  "homepage": "https://github.com/sydroth/javascriptlibrary#readme"
+}
