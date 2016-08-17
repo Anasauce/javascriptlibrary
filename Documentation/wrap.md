@@ -10,8 +10,7 @@ We created a const called wrap and assigned it two parameters, a value and a wra
 
 ###Code Examples
 
-``` const myNewFunction = wrap( 5, valueOne => valueOne * 2 )
+~~~~ const myNewFunction = wrap( 5, valueOne => valueOne * 2 )
 
-myNewFunction() ```
+myNewFunction() ~~~~
 
-NOTE: the before and after your code is what makes it show up in this doc as a code block and not just text.
