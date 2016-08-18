@@ -1,6 +1,6 @@
 import { range } from '../src/range'
 
-fdescribe( 'range', () => {
+describe( 'range', () => {
 
   it( 'returns an empty array when input is null', () => {
     expect( range( null ) ).toEqual( [] )
@@ -37,8 +37,8 @@ fdescribe( 'range', () => {
     describe( 'when only end argument is given', () => {
 
       it( 'returns array of numbers incremented by one from 0 to [end] argument', () => {
-        expect( range( -5 ) ).toEqual( [0, -1, -2, -3, -4] )
-        expect( range( 5 ) ).toEqual( [0, 1, 2, 3, 4] )
+        expect( range( -5 ) ).toEqual( [0, -1, -2, -3, -4, -5] )
+        expect( range( 5 ) ).toEqual( [0, 1, 2, 3, 4, 5] )
       })
 
     })
@@ -46,8 +46,8 @@ fdescribe( 'range', () => {
     describe( 'when start and end arguments are given', () => {
 
       it( 'returns array of numbers incremented by one from, and including, [start] to [end]', () => {
-        expect( range( 2, -3 ) ).toEqual( [2, 1, 0, -1, -2] )
-        expect( range( 3, 7 ) ).toEqual( [3, 4, 5, 6] )
+        expect( range( 2, -3 ) ).toEqual( [2, 1, 0, -1, -2, -3] )
+        expect( range( 3, 7 ) ).toEqual( [3, 4, 5, 6, 7] )
       })
 
       it( 'when [step] argument is given increments by value of that step, from start, in direction of the [end] argument', () => {
