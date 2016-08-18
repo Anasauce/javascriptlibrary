@@ -1,6 +1,6 @@
 import { range } from '../src/range'
 
-describe( 'range', () => {
+fdescribe( 'range', () => {
 
   it( 'returns an empty array when input is null', () => {
     expect( range( null ) ).toEqual( [] )
