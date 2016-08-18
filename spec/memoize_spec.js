@@ -1,6 +1,6 @@
 import { memoize } from '../src/memoize'
 
-fdescribe( 'memoize', () => {
+describe( 'memoize', () => {
   it( 'creates a function', () => {
     expect( typeof( memoize( a => a ) ) ).toEqual( 'function' )
   })
