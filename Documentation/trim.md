@@ -1,17 +1,22 @@
-#Your Function Name
+#trim
 
 ###Overview
 
-In general words, what does this function do? Example: It adds stuff together step by step.
+It trims all leading and trailing whitespaces or specified characters.
 
 ###Technical Explanation
 
-In technical terms, what does it do? Example: it takes a value and iterates an addtion function over each piece of the element. If providing a startingIndex, it will iterate from that index location and on. If not provided a startingIndex, it will begin at zero. If the value its given is a single number, it returns the initial value.
+Two arguments are taken, 'string', the string we want to trim, and 'chars', the content we want to trim. If the string input is something besides a string, it will be converted with _.toString, and then trimmed and returned as a string. The function will iterate through the string from right to left, stopping at whatever index it first encounters a non-target (a non-target being any character that wasn't specificed as the 'chars' value). It will then iterate from left to right, also stopping at the first non-target it encounters from that side. If a chars value is specified, it should iterate fully through the whole string. If the string input is null, empty, or undefined then a simple empty string will be returned. It can be iterated through _.map
 
 ###Code Examples
 
-```add(8, 7);
-// 15```
+``` _.trim('  abc  '); 
+// ➜ 'abc' 
+ 
+_.trim('-_-abc-_-', '_-'); 
+// ➜ 'abc' 
+ 
+_.map(['  foo  ', '  bar  '], _.trim); 
+// ➜ ['foo', 'bar'] ```
 
-NOTE: the ``` before and after your code is what makes it show up in this doc as a code block and not just text.
 
