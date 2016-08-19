@@ -1,16 +1,18 @@
-#Your Function Name
+#parseInt
 
 ###Overview
 
-In general words, what does this function do? Example: It adds stuff together step by step.
+Converts string to an integer of the specified radix. If radix is undefined or 0, a radix of 10 is used unless value is a hexadecimal, in which case a radix of 16 is used. 
 
 ###Technical Explanation
 
-In technical terms, what does it do? Example: it takes a value and iterates an addtion function over each piece of the element. If providing a startingIndex, it will iterate from that index location and on. If not provided a startingIndex, it will begin at zero. If the value its given is a single number, it returns the initial value.
+Takes an input with the base of 10. With a starting index of 0, it searches for the index of the the input. If a hexidecimal input is given, toDigit is used with the ascii value to convert the letters to digits. It then converts the input to the correct base 10 interger.
 
 ###Code Examples
 
-```add(8, 7);
-// 15```
+```_.parseInt('08');
+// ➜ 8
 
-NOTE: the ``` before and after your code is what makes it show up in this doc as a code block and not just text.
+_.map(['6', '08', '10'], _.parseInt);
+// ➜ [6, 8, 10]```
+
