@@ -1,16 +1,35 @@
-#Your Function Name
+#memoize
 
 ###Overview
 
-In general words, what does this function do? Example: It adds stuff together step by step.
+Creates a new function that memoizes the result of a iteratee function.
 
 ###Technical Explanation
 
-In technical terms, what does it do? Example: it takes a value and iterates an addtion function over each piece of the element. If providing a startingIndex, it will iterate from that index location and on. If not provided a startingIndex, it will begin at zero. If the value its given is a single number, it returns the initial value.
+Creates a function that memoizes the result of func. If resolver is provided, it determines the cache key for storing the result based on the arguments provided to the memoized function. By default, the first argument provided to the memoized function is used as the map cache key. The func is invoked with the this binding of the memoized function. 
 
 ###Code Examples
 
-```add(8, 7);
-// 15```
+```var object = { 'a': 1, 'b': 2 };
+var other = { 'c': 3, 'd': 4 };
 
-NOTE: the ``` before and after your code is what makes it show up in this doc as a code block and not just text.
+var values = _.memoize(_.values);
+values(object);
+// ➜ [1, 2]
+
+values(other);
+// ➜ [3, 4]
+
+object.a = 2;
+values(object);
+// ➜ [1, 2]
+
+// Modify the result cache.
+values.cache.set(object, ['a', 'b']);
+values(object);
+// ➜ ['a', 'b']
+
+// Replace _.memoize.Cache.
+_.memoize.Cache = WeakMap;```
+
+
