@@ -1,16 +1,19 @@
-#Your Function Name
+#chunk
 
 ###Overview
 
-In general words, what does this function do? Example: It adds stuff together step by step.
+Splits an array into a group of arrays by the length of size. If the array can't be split evenly then the final chunk will be the remaining elements.
+
 
 ###Technical Explanation
 
-In technical terms, what does it do? Example: it takes a value and iterates an addtion function over each piece of the element. If providing a startingIndex, it will iterate from that index location and on. If not provided a startingIndex, it will begin at zero. If the value its given is a single number, it returns the initial value.
+It takes an array as its first argument and a "size" as its second. If the input provided is not an array, it will be converted into one. It iterates in a loop through the array and slices out a new array by 'size'. This is repeated until a chunk of the correct size can no longer be created. At this time, a final chunk will be created with the remaining elements of the original array. Array chunks are returned within an array.
 
 ###Code Examples
 
-```add(8, 7);
-// 15```
+```_.chunk(['a', 'b', 'c', 'd'], 2);
+// [['a', 'b'], ['c', 'd']]
 
-NOTE: the ``` before and after your code is what makes it show up in this doc as a code block and not just text.
+_.chunk(['a', 'b', 'c', 'd'], 3);
+// [['a', 'b', 'c'], ['d']] ```
+
