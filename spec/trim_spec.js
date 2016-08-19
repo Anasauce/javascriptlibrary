@@ -1,11 +1,6 @@
 import { trim } from '../src/trim'
 
-
-//UNLESS you can remove all chars within a certain index range? ask JRob
-//works from left to right, stops when it sees unwanted chars,
-//then works from right to left, stops when it sees unwanted chars
-
-fdescribe( 'trim', () => {
+describe( 'trim', () => {
   it( 'removes all trailing and leading whitespaces if chars argument is undefined', () => {
     expect( trim(' this is a test string ')).toEqual( 'this is a test string' )
   })
@@ -16,11 +11,11 @@ fdescribe( 'trim', () => {
 
   describe( 'when it is given an invalid value', () => {
     it( 'returns trimmed string when given an array', () => {
-      expect( trim([ ' this is a test array ' ]).toEqual( 'this is a test array' )
+      expect( trim([ ' this is a test array ' ])).toEqual( 'this is a test array' )
     })
 
     it( 'returns a trimmed string when given an object', () => {
-      expect( trim({ a:1 }).toEqual( 'a:1' )
+      expect( trim({ a:1 })).toEqual( '[object Object]' )
     })
 
     it( 'returns trimmed string when given a boolean', () => {
@@ -42,5 +37,6 @@ fdescribe( 'trim', () => {
     it( 'returns empty string when string input is undefined', () => {
       expect( trim( )).toEqual('')
     })
-
   })
+
+})

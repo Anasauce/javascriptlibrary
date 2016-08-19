@@ -1,28 +1,29 @@
 
-const trim = ( value, chars) => {
-  const paramOne = value.toString()
-  const characters = (chars || '\t\n ').split('')
+const trim = ( value, chars ) => {
+  const input = ( value || '' ).toString()
+  const characters = chars || '\t\n '
 
-
-  for (let start = value.length --1 ; start < ; i--) {
-   //then check each index for the split chars one by one or the spaces
+  return trimFromEnd( trimFromEnd( input, characters ), characters )
 }
 
-  //need to write that if chars === undefined || null || empty, then a => a
+const trimFromEnd = (input, chars) => {
+  let result = ''
+  let stop = false
 
-}
+  for( let index = input.length - 1; index >= 0; index-- ) {
+    let skip = false
 
+    for( let charIndex = 0; charIndex < chars.length && ! stop; charIndex++ ) {
+      skip = skip || input[ index ] === chars[ charIndex ]
+    }
+
+    if( ! skip ) {
+      stop = true
+      result += input[ index ]
+    }
+  }
 
   return result
 }
 
-  if( ! isString( string ) ) {
-    return ''
-
-
-
-
-
-
-
-export {trim}
+export { trim, trimFromEnd }
