@@ -1,4 +1,4 @@
-###_.range(array)
+###range(array)
 
 Takes and array and returns a new array in the reversed order.
 
