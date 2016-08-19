@@ -18,43 +18,39 @@ fdescribe( 'range', () => {
     expect( range( 'hello' ) ).toEqual( [] )
   })
 
-    describe( 'when input is a Boolean', () => {
-
-      it( 'returns and empty array when input is false', () => {
-        expect( range( false ) ).toEqual( [] )
-      })
-
-      // it( 'retruns 0 when input is true', () => {
-      //   expect( range( true ) ).toEqual( 0 )
-      // })
-
-    })
+  it( 'returns and empty array when input is boolean', () => {
+    expect( range( false ) ).toEqual( [] )
+  })
 
   it( 'returns an empty array when input is 0', () => {
     expect( range( 0 ) ).toEqual( [] )
   }) 
 
-    describe( 'when only end argument is given', () => {
+  it( 'returns an array of numbers progressing from start up to, but not including, end', () => {
+    expect( range( 0, 5, 1) ).toEqual( [ 0, 1, 2, 3, 4 ] )
+  })
 
-      it( 'returns array of numbers incremented by one from 0 to [end] argument', () => {
-        expect( range( -5 ) ).toEqual( [0, -1, -2, -3, -4, -5] )
-        expect( range( 5 ) ).toEqual( [0, 1, 2, 3, 4, 5] )
-      })
+  it( 'defaults to start 0 and step 1 when only one argument provided', () => {
+    expect( range( 3 ) ).toEqual( [ 0, 1, 2 ] )
+  })
 
-    })
+  it( 'defaults to step 1 when step is not provided', () => {
+    expect( range( 3, 6 ) ).toEqual( [ 3, 4, 5 ] )
+  })
 
-    describe( 'when start and end arguments are given', () => {
+  it( 'uses a step of -1 if a negative end is specified without an start or step', () => {
+    expect( range( -4 ) ).toEqual( [ 0, -1, -2, -3 ] )
+  })
 
-      it( 'returns array of numbers incremented by one from, and including, [start] to [end]', () => {
-        expect( range( 2, -3 ) ).toEqual( [2, 1, 0, -1, -2, -3] )
-        expect( range( 3, 7 ) ).toEqual( [3, 4, 5, 6, 7] )
-      })
+  it( 'creates an array that uses specified step value', () => {
+    expect( range( 0, 25, 5 ) ).toEqual( [ 0, 5, 10, 15, 20 ] )
+  })
 
-      // it( 'when [step] argument is given increments by value of that step, from start, in direction of the [end] argument', () => {
-      //   expect( range( 2, 10, 2) ).toEqual( [2, 4, 6, 8] )
-      //   expect( range (0, -24, -6) ).toEqual( [0, -6, -12, -18] )
-      // })
- 
-    })
+  it( 'can use specified step value when negative', () => {
+    expect( range( 0, -12, -3 ) ).toEqual( [ 0, -3, -6, -9 ] )
+  })
 
-})      
+  it( 'creates a range that spans 0', () => {
+    expect( range( 2, -3 ) ).toEqual( [2, 1, 0, -1, -2 ] )    
+  })
+})

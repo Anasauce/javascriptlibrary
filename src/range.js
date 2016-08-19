@@ -1,28 +1,28 @@
-const range = (integer, integer2) => {  
+const range = ( ...args ) => {  
+  const { start, step, end } = parseRangeParams( args )
+  let result = []
 
-if(typeof (integer) != "number" || integer === 0 ) {
-    return []
+  if( step < 0 ) {
+    for( let value = start; value > end; value += step ) {
+      result.push( value )
+    }
+  } else {
+    for( let value = start; value < end; value += step ) {
+      result.push( value )
+    }    
   }
 
-let array = []
+  return result
+}
 
-  if ( integer > 0  && integer2 == null) {
-    for( var i =0; i<= integer; i++ ) {
-      array.push( Math.abs( i ) )
-    }
-  } 
-
-  else if ( integer < 0 && integer2 == null){
-    for(var i =0; i >= integer; i--) {
-      array.push( -Math.abs( i ) )
-      
-    }
+const parseRangeParams = args => {
+  if( args.length === 1 ) {
+    return { start: 0, end: args[ 0 ], step: args[ 0 ] >= 0 ? 1 : -1 }
+  } else if( args.length === 2 ) {
+    return { start: args[ 0 ], end: args[ 1 ], step: args[ 1 ] >= 0 ? 1 : -1 }
+  } else {
+    return { start: args[ 0 ], end: args[ 1 ], step: args[ 2 ]}
   }
-  else{
-    return Math.abs(integer - integer2)
-    }  
-
-  return array
 }
 
 export { range }
